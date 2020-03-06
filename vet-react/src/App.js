@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from "./components/Header";
-import AddAppointment from "./components/AddAppointment";
+import AddAppointment from "./components/AddAppointment"
+import ApponintList from "./components/AppointList";
 
 class App extends Component {
 
@@ -22,12 +23,17 @@ class App extends Component {
                    titulo={'Administrador de pacientes'} 
                 />
                 <section className="row">
-                <article className="col-md-6 col-12">
-                    <AddAppointment
-                        newAppointment={this.newAppointment}
-                    />
-                </article>
-            </section>
+                    <article className="col-lg-6 col-12">
+                        <AddAppointment
+                            newAppointment={this.newAppointment}
+                        />
+                    </article>
+                    <article className="col-lg-6 col-12">
+                        <ApponintList
+                            appoints={this.state.appoints}
+                        />
+                    </article>
+                </section>
             </div>
             
         );
