@@ -11,7 +11,9 @@ class AddApointment extends Component {
     hrAp = React.createRef();
     statPac = React.createRef();
 
-    state = { }
+    state = { 
+        error: false
+    }
 
     newAppointment = e => {
         e.preventDefault();
@@ -21,6 +23,14 @@ class AddApointment extends Component {
             date = this.dateAp.current.value,
             hr = this.hrAp.current.value,
             stat = this.statPac.current.value;
+        
+        if(name === '' || proc === '' || date === '' || hr === '' || stat === '')
+        {
+            this.setState({
+                error : true
+            });
+            return;
+        }
 
         const newAppoint = {
             id : uuid(),
@@ -31,11 +41,19 @@ class AddApointment extends Component {
             stat
         }
 
+        // se envía hacia el parent
         this.props.newAppointment(newAppoint);
 
+        //reset form
+        e.currentTarget.reset();
+
+        this.setState({
+            error: false
+        });
     }
 
     render() {
+        const existErr = this.state.error;
         return (
             <div className="card mt-5">
                 <div className="card-body">
@@ -78,6 +96,7 @@ class AddApointment extends Component {
                             </div>
                         </div>
                     </form>
+                    { existErr ? <div className="alert alert-danger text-center"> Todos los campos son obligatorios </div> : ''}
                 </div>
             </div>
         );

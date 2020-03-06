@@ -4,8 +4,15 @@ import AddAppointment from "./components/AddAppointment";
 
 class App extends Component {
 
-    newAppointment = () =>   {
+    state = {
+        appoints: []
+    }
 
+    newAppointment = (newAppoint) =>   {
+        const appoints = [...this.state.appoints, newAppoint]
+        this.setState({
+            appoints
+        });
     }
 
     render() {
@@ -17,7 +24,7 @@ class App extends Component {
                 <section className="row">
                 <article className="col-md-6 col-12">
                     <AddAppointment
-                        
+                        newAppointment={this.newAppointment}
                     />
                 </article>
             </section>
