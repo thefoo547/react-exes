@@ -9,6 +9,22 @@ class App extends Component {
         appoints: []
     }
 
+    componentDidMount() {
+        const appointsLS=localStorage.getItem('appoints');
+        if(appointsLS) {
+            this.setState({
+                appoints: JSON.parse(appointsLS)
+            });
+        }
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem(
+            'appoints',
+            JSON.stringify(this.state.appoints)
+        );
+    }
+
     newAppointment = (newAppoint) =>   {
         const appoints = [...this.state.appoints, newAppoint]
         this.setState({
