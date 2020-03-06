@@ -19,6 +19,7 @@ class AppointList extends Component {
                             <Appoint
                                 key={cita}
                                 info={this.props.appoints[cita]}
+                                delAppoint={this.props.delAppoint}
                             />
                         ))}
                     </div>

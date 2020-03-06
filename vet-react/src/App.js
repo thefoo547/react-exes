@@ -16,6 +16,17 @@ class App extends Component {
         });
     }
 
+    delAppoint = id => {
+        // read state
+        const actappoints = [...this.state.appoints];
+        //del element from state copy
+        const appoints = actappoints.filter(appoint => appoint.id !== id);
+        //upd state
+        this.setState({
+            appoints
+        });
+    }
+
     render() {
         return ( 
             <div className = "container" >
@@ -31,6 +42,7 @@ class App extends Component {
                     <article className="col-lg-6 col-12">
                         <ApponintList
                             appoints={this.state.appoints}
+                            delAppoint={this.delAppoint}
                         />
                     </article>
                 </section>
