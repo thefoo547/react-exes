@@ -1,0 +1,19 @@
+.empleado-card {
+    padding: 2em;
+    width: 100%;
+    margin-top: 2em;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+  }
+  .empleado-card h3:last-child {
+    margin-bottom: 3em;
+  }
+  .empleado-card p {
+    margin: 0.5em 0;
+  }
+  .empleado-card button {
+    margin-right: 1em;
+  }
+  
+  /*# sourceMappingURL=test.css.map */
+  

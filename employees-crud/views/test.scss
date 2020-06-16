@@ -1,0 +1,16 @@
+.empleado-card{
+    padding: 2em;
+    width: 100%;
+    margin-top: 2em;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    h3:last-child{
+        margin-bottom: 3em;
+    }
+    p{
+        margin: 0.5em 0;
+    }
+    button{
+        margin-right: 1em;
+    }
+}
