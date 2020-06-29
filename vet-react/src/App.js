@@ -19,6 +19,8 @@ class App extends Component {
     }
 
     componentDidUpdate() {
+
+        console.log(JSON.stringify(this.state.appoints))
         localStorage.setItem(
             'appoints',
             JSON.stringify(this.state.appoints)

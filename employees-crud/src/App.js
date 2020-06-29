@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {
+  Component
+} from 'react';
 import './App.css';
-import EmployeeCard from './components/EmployeeCard';
+import Router from './components/Router';
 
-function App() {
-  return (
-    <div className='container'>
-      <section>
-        <EmployeeCard/>
-      </section>
-    </div>
-  )
+class App extends Component {
+
+
+  render() {
+    return ( 
+      <Router / >
+    );
+  }
 }
 
 export default App;
